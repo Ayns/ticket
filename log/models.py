@@ -24,7 +24,7 @@ class ticket (models.Model):
     Date = models.DateField()
     User = models.ForeignKey(User, on_delete=models.CASCADE)
     Dept = models.ForeignKey(department, on_delete=models.CASCADE)
-    Subject = models.CharField(max_length=60)
+    Subject = models.CharField(max_length=100)
     Details = models.TextField(null=True, blank=True)
 
     def __str__(self):

@@ -1,6 +1,38 @@
 {% extends "log/base.html" %}
-{% block body_block %}
 {% load static %}
+{% load crispy_forms_tags %}
+{% block body_block %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="columns is-right">
+            <div class="column is-2">
+                    <p><label for="date">Date:</label>
+                        <input id="date" class ="input is-primary" type="text" name="Date" maxlength="10" required placeholder="Date"></p>
+    </div>                
+    </div>
+                    
+    <div class="columns is-left">
+            <div class="column is-4">
+    <div class="field">
+            <div class="control">
+              <input class="input is-primary" type="text" placeholder="Subject" required>
+            </div>
+              <br>
+              <div class="control">
+                <textarea name="Message" class="textarea is-primary" id="Message" cols="30" rows="10" required placeholder="Message"></textarea>    
+
+
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <input type="submit" name=Submit id=" Submit">
+
+</form>
+
+
 
   
 

@@ -72,3 +72,13 @@ def user_login(request):
             return HttpResponse("Invalid login details given")
     else:
         return render(request, 'log/login.html', {})
+
+def home(request):
+    return render(request, 'log/home.html')
+
+def add(request):
+    val1 = int(request.POST["num1"])
+    val2 = int(request.POST["num2"])
+    res = val1 + val2
+
+    return render(request, "log/result.html", {'result':res}) 
